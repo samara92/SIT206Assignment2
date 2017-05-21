@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  assignment2
 //
-//  Created by SAMEERA PRIYANANDA on 21/05/2017.
+//  Created by SAMEERA PRIYANANDA on 21/04/2017.
 //  Copyright © 2017 SAMEERA PRIYANANDA. All rights reserved.
 //
 
@@ -12,9 +12,6 @@ import GameplayKit
 
 
 var currentGameType = gameType.medium
-
-
-
 
 class GameViewController: UIViewController {
 
@@ -26,8 +23,7 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
-                
+   
                 scene.size = view.bounds.size
                 
                 

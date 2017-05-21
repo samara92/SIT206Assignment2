@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  assignment2
 //
-//  Created by SAMEERA PRIYANANDA on 21/05/2017.
+//  Created by SAMEERA PRIYANANDA on 21/04/2017.
 //  Copyright © 2017 SAMEERA PRIYANANDA. All rights reserved.
 //
 

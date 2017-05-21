@@ -2,7 +2,7 @@
 //  GameScene.swift
 //  assignment2
 //
-//  Created by SAMEERA PRIYANANDA on 21/05/2017.
+//  Created by SAMEERA PRIYANANDA on 21/04/2017.
 //  Copyright © 2017 SAMEERA PRIYANANDA. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    //create variables
     var ball = SKSpriteNode()
     var enemy = SKSpriteNode()
     var main = SKSpriteNode()
@@ -21,22 +22,19 @@ class GameScene: SKScene {
     var score = [Int]()
     
     override func didMove(to view: SKView) {
-        
-        
-        
+
         topLabel = self.childNode(withName: "topLabel") as! SKLabelNode
         bottomLabel = self.childNode(withName: "bottomLabel") as! SKLabelNode
         
+        //connect to the project
         ball = self.childNode(withName: "ball") as! SKSpriteNode
         enemy = self.childNode(withName: "enemy") as! SKSpriteNode
         enemy.position.y = (self.frame.height / 2) - 50
         
-        
         main = self.childNode(withName: "main") as! SKSpriteNode
         main.position.y = (-self.frame.height / 2) + 50
        
-        
-        
+        //create the border for the screen frame
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         border.friction = 0
@@ -52,10 +50,12 @@ class GameScene: SKScene {
         score = [0,0]
         topLabel.text = "\(score[1])"
         bottomLabel.text = "\(score[0])"
+        //make the ball moving using X & Y directions values
         ball.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 10))
         
     }
     
+    //calculate the core for each player when playing the game
     func addScore(playerWhoWon : SKSpriteNode){
         
         ball.position = CGPoint(x: 0, y:0)
@@ -77,7 +77,7 @@ class GameScene: SKScene {
         bottomLabel.text = "\(score[0])"
     }
     
-    
+    //identifying touching movements
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch in touches{
@@ -126,8 +126,6 @@ class GameScene: SKScene {
         
     }
     
-    
-    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
@@ -145,15 +143,14 @@ class GameScene: SKScene {
         case .player2:
             break
         }
-        
-        
+
         enemy.run(SKAction.moveTo(x: ball.position.x, duration: 1.0))
         
 
-        
+    
         if ball.position.y <= main.position.y - 30 {
             addScore(playerWhoWon: enemy)
-            
+     
         
         }
         else if ball.position.y >= enemy.position.y + 30{

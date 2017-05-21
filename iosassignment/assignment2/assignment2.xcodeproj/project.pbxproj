@@ -319,6 +319,7 @@
 				71D95C951ED0A17900F731F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -55,7 +55,7 @@ class GameScene: SKScene {
         
     }
     
-    //calculate the core for each player when playing the game
+    //calculate the score for each player when playing the game
     func addScore(playerWhoWon : SKSpriteNode){
         
         ball.position = CGPoint(x: 0, y:0)
